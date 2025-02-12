@@ -27,7 +27,7 @@ public class FerramentaController {
         return JsonUtil.loadFromJson(FILE_PATH, new com.google.gson.reflect.TypeToken<List<Ferramenta>>() {}.getType());
     }
 
-    private void saveFerramentas() {
+    public void saveFerramentas() {
         JsonUtil.saveToJson(ferramentas, FILE_PATH);
     }
 }
