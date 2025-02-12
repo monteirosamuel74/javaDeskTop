@@ -1,1 +1,11 @@
-[]
+[
+    {
+        "objetivo": "Completar esse Projeto Final",
+        "plano": "Pesquisar conte�do para apoinar na contru��o e usar o conte�do dado como base.",
+        "execucao": "Codificar o sistema.",
+        "verificacao": "Testa em busca de erros.",
+        "acao": "Verificar oportunidades de melhoria e reiniciar o plano com as novas tarefas.",
+        "nome": "Novo PDCA",
+        "participantes": []
+    }
+]

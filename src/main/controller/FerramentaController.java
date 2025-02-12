@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FerramentaController {
-    private static final String FILE_PATH = "src/resources/ferramentas.json";
+    private static final String FILE_PATH = "resources/ferramentas.json";
     private List<Ferramenta> ferramentas;
 
     public FerramentaController() {

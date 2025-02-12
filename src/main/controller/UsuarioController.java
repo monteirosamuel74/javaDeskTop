@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioController {
-    private static final String FILE_PATH = "src/resources/usuarios.json";
+    private static final String FILE_PATH = "resources/usuarios.json";
     private List<Usuario> usuarios;
 
     public UsuarioController() {

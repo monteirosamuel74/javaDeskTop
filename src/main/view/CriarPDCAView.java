@@ -25,13 +25,25 @@ public class CriarPDCAView extends JFrame {
         JTextField objetivoField = new JTextField();
         JLabel planoLabel = new JLabel("Plano:");
         JTextField planoField = new JTextField();
+        JLabel execucaoLabel = new JLabel("Execução:");
+        JTextField execucaoField = new JTextField();
+        JLabel verificacaoLabel = new JLabel("Verificação:");
+        JTextField verificacaoField = new JTextField();
+        JLabel acaoLabel = new JLabel("Ação:");
+        JTextField acaoField = new JTextField();
         JButton salvarButton = new JButton("Salvar");
+
 
         salvarButton.addActionListener(e -> {
             String objetivo = objetivoField.getText();
             String plano = planoField.getText();
+            String execucao = execucaoField.getText();
+            String verificacao = verificacaoField.getText();
+            String acao = acaoField.getText();
 
-            if (ValidationUtil.isNullOrEmpty(objetivo) || ValidationUtil.isNullOrEmpty(plano)) {
+            if (ValidationUtil.isNullOrEmpty(objetivo) || ValidationUtil.isNullOrEmpty(plano) ||
+            ValidationUtil.isNullOrEmpty(execucao) || ValidationUtil.isNullOrEmpty(verificacao) ||
+            ValidationUtil.isNullOrEmpty(acao)) {
                 JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
                 return;
             }
@@ -39,8 +51,12 @@ public class CriarPDCAView extends JFrame {
             PDCA pdca = new PDCA("Novo PDCA");
             pdca.setObjetivo(objetivo);
             pdca.setPlano(plano);
+            pdca.setExecucao(execucao);
+            pdca.setVerificacao(verificacao);
+            pdca.setAcao(acao);
 
             ferramentaController.addFerramenta(pdca);
+            ferramentaController.saveFerramentas();
             JOptionPane.showMessageDialog(this, "PDCA criado com sucesso!");
             dispose();
         });
@@ -49,6 +65,12 @@ public class CriarPDCAView extends JFrame {
         panel.add(objetivoField);
         panel.add(planoLabel);
         panel.add(planoField);
+        panel.add(execucaoLabel);
+        panel.add(execucaoField);
+        panel.add(verificacaoLabel);
+        panel.add(verificacaoField);
+        panel.add(acaoLabel);
+        panel.add(acaoField);
         panel.add(new JLabel()); // Espaço vazio
         panel.add(salvarButton);
 
