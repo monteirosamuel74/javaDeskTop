@@ -32,6 +32,12 @@ public class ConsultaView extends JFrame {
 
         // Botão para visualizar detalhes
         JButton detalhesButton = new JButton("Ver Detalhes");
+        detalhesButton.setEnabled(false); // Desabilita o botão inicialmente
+
+        ferramentasList.addListSelectionListener(e -> {
+            detalhesButton.setEnabled(ferramentasList.getSelectedIndex() != -1);
+        });
+
         detalhesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -39,8 +45,6 @@ public class ConsultaView extends JFrame {
                 if (selectedIndex != -1) {
                     Ferramenta ferramentaSelecionada = ferramentas.get(selectedIndex);
                     new DetalhesFerramentaView(ferramentaSelecionada).setVisible(true);
-                } else {
-                    JOptionPane.showMessageDialog(ConsultaView.this, "Selecione uma ferramenta para ver os detalhes.");
                 }
             }
         });

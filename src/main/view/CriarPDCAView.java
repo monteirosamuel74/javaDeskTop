@@ -1,13 +1,11 @@
 package view;
 
-import model.PDCA;
-import model.Usuario;
-import util.ValidationUtil;
 import controller.FerramentaController;
+import model.PDCA;
+import util.ValidationUtil;
 
 import javax.swing.*;
 import java.awt.GridLayout;
-import java.util.List;
 
 public class CriarPDCAView extends JFrame {
     private FerramentaController ferramentaController;
@@ -33,7 +31,6 @@ public class CriarPDCAView extends JFrame {
         JTextField acaoField = new JTextField();
         JButton salvarButton = new JButton("Salvar");
 
-
         salvarButton.addActionListener(e -> {
             String objetivo = objetivoField.getText();
             String plano = planoField.getText();
@@ -41,13 +38,15 @@ public class CriarPDCAView extends JFrame {
             String verificacao = verificacaoField.getText();
             String acao = acaoField.getText();
 
+            // Validação dos campos
             if (ValidationUtil.isNullOrEmpty(objetivo) || ValidationUtil.isNullOrEmpty(plano) ||
-            ValidationUtil.isNullOrEmpty(execucao) || ValidationUtil.isNullOrEmpty(verificacao) ||
-            ValidationUtil.isNullOrEmpty(acao)) {
+                ValidationUtil.isNullOrEmpty(execucao) || ValidationUtil.isNullOrEmpty(verificacao) ||
+                ValidationUtil.isNullOrEmpty(acao)) {
                 JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
                 return;
             }
 
+            // Cria e salva a ferramenta PDCA
             PDCA pdca = new PDCA("Novo PDCA");
             pdca.setObjetivo(objetivo);
             pdca.setPlano(plano);
@@ -55,10 +54,10 @@ public class CriarPDCAView extends JFrame {
             pdca.setVerificacao(verificacao);
             pdca.setAcao(acao);
 
-            ferramentaController.addFerramenta(pdca);
-            ferramentaController.saveFerramentas();
+            ferramentaController.addFerramenta(pdca); // Adiciona a ferramenta à lista
+            ferramentaController.saveFerramentas(ferramentaController.getFerramentas()); // Salva a lista atualizada
             JOptionPane.showMessageDialog(this, "PDCA criado com sucesso!");
-            dispose();
+            dispose(); // Fecha a tela após salvar
         });
 
         panel.add(objetivoLabel);

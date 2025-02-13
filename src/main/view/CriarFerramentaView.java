@@ -16,12 +16,12 @@ public class CriarFerramentaView extends JFrame {
 
         pdcaButton.addActionListener(e -> {
             new CriarPDCAView().setVisible(true);
-            dispose();
+            this.dispose(); //a tela era fechada logo após ser criada
         });
 
         cincoW2hButton.addActionListener(e -> {
             new Criar5W2HView().setVisible(true);
-            dispose();
+            this.dispose();
         });
 
         panel.add(new JLabel("Escolha o tipo de ferramenta:"));

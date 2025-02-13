@@ -29,7 +29,7 @@ public class EditarPDCAView extends JFrame {
         salvarButton.addActionListener(e -> {
             pdca.setObjetivo(objetivoField.getText());
             pdca.setPlano(planoField.getText());
-            ferramentaController.saveFerramentas(); // Salva as alterações
+            ferramentaController.updateFerramenta(pdca); // Salva as alterações
             JOptionPane.showMessageDialog(this, "PDCA atualizado com sucesso!");
             dispose();
         });

@@ -44,7 +44,7 @@ public class Editar5W2HView extends JFrame {
             cincoW2H.setWho(whoField.getText());
             cincoW2H.setHow(howField.getText());
             cincoW2H.setHowMuch(howMuchField.getText());
-            ferramentaController.saveFerramentas(); // Salva as alterações
+            ferramentaController.updateFerramenta(cincoW2H); // Salva as alterações
             JOptionPane.showMessageDialog(this, "5W2H atualizado com sucesso!");
             dispose();
         });
