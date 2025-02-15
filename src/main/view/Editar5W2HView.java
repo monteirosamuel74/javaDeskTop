@@ -37,6 +37,7 @@ public class Editar5W2HView extends JFrame {
         JButton salvarButton = new JButton("Salvar");
 
         salvarButton.addActionListener(e -> {
+            // Atualiza os dados do 5W2H
             cincoW2H.setWhat(whatField.getText());
             cincoW2H.setWhy(whyField.getText());
             cincoW2H.setWhere(whereField.getText());
@@ -44,9 +45,11 @@ public class Editar5W2HView extends JFrame {
             cincoW2H.setWho(whoField.getText());
             cincoW2H.setHow(howField.getText());
             cincoW2H.setHowMuch(howMuchField.getText());
-            ferramentaController.updateFerramenta(cincoW2H); // Salva as alterações
+
+            // Salva as alterações
+            ferramentaController.updateFerramenta(cincoW2H);
             JOptionPane.showMessageDialog(this, "5W2H atualizado com sucesso!");
-            dispose();
+            dispose(); // Fecha a tela após salvar
         });
 
         panel.add(whatLabel);

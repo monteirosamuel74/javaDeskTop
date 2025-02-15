@@ -7,5 +7,44 @@
         "acao": "Verificar oportunidades de melhoria e reiniciar o plano com as novas tarefas.",
         "nome": "Novo PDCA",
         "participantes": []
+    },
+    {
+        "what": "Corrigir este projeto",
+        "why": "Para concluir a disciplina",
+        "where": "homeoffice",
+        "when": "prazo m�ximo estipulado pelo professor",
+        "who": "samuel monteiro",
+        "how": "SVDSP",
+        "howMuch": "For free",
+        "nome": "Novo 5W2H",
+        "participantes": []
+    },
+    {
+        "what": "o qu�?",
+        "why": "por qu�?",
+        "where": "onde?",
+        "when": "quando?",
+        "who": "quem?",
+        "how": "como?",
+        "howMuch": "por quanto?",
+        "tipo": "5W2H",
+        "nome": "5w2h reajustado",
+        "participantes": [
+            {
+                "nome": "Samuel Monteiro",
+                "funcao": "Gerente",
+                "contato": "65992710010"
+            },
+            {
+                "nome": "paulo",
+                "funcao": "prof",
+                "contato": "65987465132"
+            },
+            {
+                "nome": "Miguel Monteiro",
+                "funcao": "Estagi�rio",
+                "contato": "65993070493"
+            }
+        ]
     }
 ]

@@ -1,2 +1,2 @@
-libs/gson-2.8.2.jar
+libs/gson-2.12.1.jar
 libs/mysql-connector-java-5.1.46-bin.jar

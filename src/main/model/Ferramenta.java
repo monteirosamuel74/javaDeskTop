@@ -5,6 +5,7 @@ import java.util.List;
 
 public abstract class Ferramenta {
     private String nome;
+    private String tipo;
     private List<Usuario> participantes;
 
     public Ferramenta(String nome) {
@@ -18,6 +19,14 @@ public abstract class Ferramenta {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public List<Usuario> getParticipantes() {

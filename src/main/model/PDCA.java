@@ -6,6 +6,7 @@ public class PDCA extends Ferramenta {
     private String execucao;
     private String verificacao;
     private String acao;
+    private String tipo = "PDCA";
 
     public PDCA(String nome) {
         super(nome);
@@ -14,6 +15,10 @@ public class PDCA extends Ferramenta {
     // Getters e Setters para os campos específicos do PDCA
     public String getObjetivo() {
         return objetivo;
+    }
+
+    public void getTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public void setObjetivo(String objetivo) {

@@ -1,6 +1,7 @@
 package model;
 
 public class CincoW2H extends Ferramenta {
+    private String objetivo;
     private String what;
     private String why;
     private String where;
@@ -8,12 +9,25 @@ public class CincoW2H extends Ferramenta {
     private String who;
     private String how;
     private String howMuch;
+    private String tipo = "5W2H";
 
     public CincoW2H(String nome) {
         super(nome);
     }
 
     // Getters e Setters para os campos específicos do 5W2H
+    public void setObjetivo(String objetivo) {
+        this.objetivo = objetivo;
+    }
+
+    public String getObjetivo() {
+        return objetivo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
     public String getWhat() {
         return what;
     }
