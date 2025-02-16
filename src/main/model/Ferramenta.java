@@ -8,8 +8,9 @@ public abstract class Ferramenta {
     private String tipo;
     private List<Usuario> participantes;
 
-    public Ferramenta(String nome) {
+    public Ferramenta(String nome, String tipo) {
         this.nome = nome;
+        this.tipo = tipo;
         this.participantes = new ArrayList<>();
     }
 

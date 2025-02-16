@@ -1,0 +1,29 @@
+[{
+    "what": "o qu ?",
+    "why": "por qu ?",
+    "where": "onde?",
+    "when": "quando?",
+    "who": "quem?",
+    "how": "como?",
+    "howMuch": "por quanto?",
+    "tipo": "5W2H",
+    "nome": "5w2h reajustado",
+    "participantes": [
+        {
+            "nome": "Samuel Monteiro",
+            "funcao": "Gerente",
+            "contato": "65992710010"
+        },
+        {
+            "nome": "paulo",
+            "funcao": "prof",
+            "contato": "65987465132"
+        },
+        {
+            "nome": "Miguel Monteiro",
+            "funcao": "Estagi rio",
+            "contato": "65993070493"
+        }
+    ]
+}
+]

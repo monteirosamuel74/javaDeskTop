@@ -92,7 +92,7 @@ public class CriarPDCAView extends JFrame {
             }
 
             // Salva a ferramenta
-            ferramentaController.addFerramenta(pdca);
+            ferramentaController.addPdca(pdca);
             JOptionPane.showMessageDialog(this, "PDCA criado com sucesso!");
             dispose(); // Fecha a tela após salvar
         });

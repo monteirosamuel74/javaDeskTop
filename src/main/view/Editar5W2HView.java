@@ -5,6 +5,7 @@ import controller.FerramentaController;
 
 import javax.swing.*;
 import java.awt.GridLayout;
+import java.util.List;
 
 public class Editar5W2HView extends JFrame {
     private FerramentaController ferramentaController;
@@ -46,8 +47,20 @@ public class Editar5W2HView extends JFrame {
             cincoW2H.setHow(howField.getText());
             cincoW2H.setHowMuch(howMuchField.getText());
 
-            // Salva as alterações
-            ferramentaController.updateFerramenta(cincoW2H);
+            // Carrega a lista de 5W2H
+            List<CincoW2H> cincoW2Hs = ferramentaController.getCincoW2Hs();
+
+            // Encontra a ferramenta na lista e atualiza seus dados
+            for (int i = 0; i < cincoW2Hs.size(); i++) {
+                if (cincoW2Hs.get(i).getNome().equals(cincoW2H.getNome())) {
+                    cincoW2Hs.set(i, cincoW2H); // Atualiza a ferramenta na lista
+                    break;
+                }
+            }
+
+            // Salva a lista atualizada no arquivo JSON
+            ferramentaController.saveCincoW2Hs(cincoW2Hs);
+
             JOptionPane.showMessageDialog(this, "5W2H atualizado com sucesso!");
             dispose(); // Fecha a tela após salvar
         });

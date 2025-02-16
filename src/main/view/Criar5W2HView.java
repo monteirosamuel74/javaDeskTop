@@ -99,7 +99,7 @@ public class Criar5W2HView extends JFrame {
                 cincoW2H.adicionarParticipante(usuario);
             }
 
-            ferramentaController.addFerramenta(cincoW2H);
+            ferramentaController.addCincoW2H(cincoW2H);
             JOptionPane.showMessageDialog(this, "5W2H criado com sucesso!");
             dispose(); // Fecha a tela após salvar
         });

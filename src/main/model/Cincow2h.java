@@ -9,10 +9,9 @@ public class CincoW2H extends Ferramenta {
     private String who;
     private String how;
     private String howMuch;
-    private String tipo = "5W2H";
-
-    public CincoW2H(String nome) {
-        super(nome);
+    
+        public CincoW2H(String nome) {
+            super(nome,"5W2H");
     }
 
     // Getters e Setters para os campos específicos do 5W2H
@@ -25,7 +24,7 @@ public class CincoW2H extends Ferramenta {
     }
 
     public String getTipo() {
-        return tipo;
+        return super.getTipo(); // Retorna o tipo da classe base
     }
 
     public String getWhat() {

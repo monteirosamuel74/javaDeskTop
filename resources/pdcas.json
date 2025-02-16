@@ -1,0 +1,21 @@
+[{
+    "objetivo": "Concluir a disciplina",
+    "plano": "Concluir",
+    "execucao": "Entregar o projeto rodando",
+    "verificacao": "Testes realizados",
+    "acao": "Subir no reposit�rio",
+    "nome": "Projeto Final",
+    "tipo": "PDCA",
+    "participantes": [
+        {
+            "nome": "Samuel Monteiro",
+            "funcao": "Gerente",
+            "contato": "65992710010"
+        },
+        {
+            "nome": "robervalchoc",
+            "funcao": "severino",
+            "contato": "656666666"
+        }
+    ]
+}]

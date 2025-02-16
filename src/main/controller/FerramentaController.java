@@ -1,15 +1,10 @@
 package controller;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import model.Ferramenta;
 import model.PDCA;
 import model.CincoW2H;
-import util.RuntimeTypeAdapterFactory;
-import util.JsonUtil;
 
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -18,70 +13,87 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FerramentaController {
-    private static final String FILE_PATH = "resources/ferramentas.json";
-    private List<Ferramenta> ferramentas;
-    private static final Gson gson;
+    private static final String PDCA_FILE_PATH = "resources/pdcas.json";
+    private static final String CINCO_W2H_FILE_PATH = "resources/5w2hs.json";
+    private static final Gson gson = new Gson();
 
-    static {
-        // Configura o Gson para suportar subclasses de Ferramenta
-        RuntimeTypeAdapterFactory<Ferramenta> typeAdapterFactory = RuntimeTypeAdapterFactory
-            .of(Ferramenta.class, "tipo") // "tipo" é o campo discriminador
-            .registerSubtype(PDCA.class, "PDCA")
-            .registerSubtype(CincoW2H.class, "5W2H");
-
-        gson = new GsonBuilder()
-            .registerTypeAdapterFactory(typeAdapterFactory)
-            .create();
-    }
+    private List<PDCA> pdcas;
+    private List<CincoW2H> cincoW2Hs;
 
     public FerramentaController() {
-        ferramentas = loadFerramentas();
+        pdcas = loadPdcas();
+        cincoW2Hs = loadCincoW2Hs();
     }
 
-    public List<Ferramenta> getFerramentas() {
-        return ferramentas;
+    // Métodos para PDCA
+    public List<PDCA> getPdcas() {
+        return loadPdcas();
     }
 
-    public void addFerramenta(Ferramenta ferramenta) {
-        ferramentas.add(ferramenta);
-        saveFerramentas(ferramentas);
+    public void addPdca(PDCA pdca) {
+        pdcas.add(pdca);
+        savePdcas();
     }
 
-    public void updateFerramenta(Ferramenta ferramentaAtualizada) {
-        // Encontra a ferramenta na lista e atualiza seus dados
-        for (int i = 0; i < ferramentas.size(); i++) {
-            Ferramenta ferramenta = ferramentas.get(i);
-            if (ferramenta.getNome().equals(ferramentaAtualizada.getNome())) {
-                ferramentas.set(i, ferramentaAtualizada); // Atualiza a ferramenta na lista
-                break;
-            }
-        }
-        saveFerramentas(ferramentas); // Salva as alterações no arquivo JSON
-    }
-
-    private List<Ferramenta> loadFerramentas() {
-        File file = new File(FILE_PATH);
-
-        // Se o arquivo não existir ou estiver vazio, cria um arquivo com um array vazio
-        if (!file.exists() || file.length() == 0) {
-            try {
-                file.createNewFile();
-                saveFerramentas(new ArrayList<>()); // Salva uma lista vazia
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        try (FileReader reader = new FileReader(FILE_PATH)) {
-            Type type = new TypeToken<List<Ferramenta>>() {}.getType();
+    private List<PDCA> loadPdcas() {
+        try (FileReader reader = new FileReader(PDCA_FILE_PATH)) {
+            Type type = new TypeToken<List<PDCA>>() {
+            }.getType();
             return gson.fromJson(reader, type);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
             return new ArrayList<>();
         }
     }
 
-    public void saveFerramentas(List<Ferramenta> ferramentas) {
-        JsonUtil.saveToJson(ferramentas, FILE_PATH);
+    private void savePdcas() {
+        try (FileWriter writer = new FileWriter(PDCA_FILE_PATH)) {
+            gson.toJson(pdcas, writer);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void savePdcas(List<PDCA> pdcas) {
+        try (FileWriter writer = new FileWriter(PDCA_FILE_PATH)) {
+            gson.toJson(pdcas, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Métodos para 5W2H
+    public List<CincoW2H> getCincoW2Hs() {
+        return loadCincoW2Hs();
+    }
+
+    public void addCincoW2H(CincoW2H cincoW2H) {
+        cincoW2Hs.add(cincoW2H);
+        saveCincoW2Hs();
+    }
+
+    private List<CincoW2H> loadCincoW2Hs() {
+        try (FileReader reader = new FileReader(CINCO_W2H_FILE_PATH)) {
+            Type type = new TypeToken<List<CincoW2H>>() {
+            }.getType();
+            return gson.fromJson(reader, type);
+        } catch (Exception e) {
+            return new ArrayList<>();
+        }
+    }
+
+    private void saveCincoW2Hs() {
+        try (FileWriter writer = new FileWriter(CINCO_W2H_FILE_PATH)) {
+            gson.toJson(cincoW2Hs, writer);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveCincoW2Hs(List<CincoW2H> cincoW2Hs) {
+        try (FileWriter writer = new FileWriter(CINCO_W2H_FILE_PATH)) {
+            gson.toJson(cincoW2Hs, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

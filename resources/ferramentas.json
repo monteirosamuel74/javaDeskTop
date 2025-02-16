@@ -1,34 +1,31 @@
 [
     {
-        "objetivo": "Completar esse Projeto Final",
-        "plano": "Pesquisar conte�do para apoinar na contru��o e usar o conte�do dado como base.",
-        "execucao": "Codificar o sistema.",
-        "verificacao": "Testa em busca de erros.",
-        "acao": "Verificar oportunidades de melhoria e reiniciar o plano com as novas tarefas.",
-        "nome": "Novo PDCA",
-        "participantes": []
+        "objetivo": "Melhorar processos",
+        "plano": "Plano detalhado",
+        "execucao": "Em andamento",
+        "verificacao": "Aguardando",
+        "acao": "Ajustes necessários",
+        "nome": "Plano de Ação 1"
     },
     {
-        "what": "Corrigir este projeto",
-        "why": "Para concluir a disciplina",
-        "where": "homeoffice",
-        "when": "prazo m�ximo estipulado pelo professor",
-        "who": "samuel monteiro",
-        "how": "SVDSP",
-        "howMuch": "For free",
-        "nome": "Novo 5W2H",
-        "participantes": []
+        "objetivo": "Identificar gargalos",
+        "what": "Processo X",
+        "why": "Reduzir custos",
+        "where": "Setor Y",
+        "when": "2023-10-01",
+        "who": "Equipe Z",
+        "how": "Reuniões semanais",
+        "howMuch": "R$ 10.000,00",
+        "nome": "Análise de Processo 1"
     },
     {
-        "what": "o qu�?",
-        "why": "por qu�?",
-        "where": "onde?",
-        "when": "quando?",
-        "who": "quem?",
-        "how": "como?",
-        "howMuch": "por quanto?",
-        "tipo": "5W2H",
-        "nome": "5w2h reajustado",
+        "objetivo": "Concluir a disciplina",
+        "plano": "Concluir",
+        "execucao": "Entregar o projeto rodando",
+        "verificacao": "Testes realizados",
+        "acao": "Subir no reposit�rio",
+        "nome": "Projeto Final",
+        "tipo": "PDCA",
         "participantes": [
             {
                 "nome": "Samuel Monteiro",
@@ -36,14 +33,9 @@
                 "contato": "65992710010"
             },
             {
-                "nome": "paulo",
-                "funcao": "prof",
-                "contato": "65987465132"
-            },
-            {
-                "nome": "Miguel Monteiro",
-                "funcao": "Estagi�rio",
-                "contato": "65993070493"
+                "nome": "robervalchoc",
+                "funcao": "severino",
+                "contato": "656666666"
             }
         ]
     }

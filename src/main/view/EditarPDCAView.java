@@ -5,6 +5,7 @@ import controller.FerramentaController;
 
 import javax.swing.*;
 import java.awt.GridLayout;
+import java.util.List;
 
 public class EditarPDCAView extends JFrame {
     private FerramentaController ferramentaController;
@@ -40,8 +41,20 @@ public class EditarPDCAView extends JFrame {
             pdca.setVerificacao(verificacaoField.getText());
             pdca.setAcao(acaoField.getText());
 
-            // Salva as alterações
-            ferramentaController.updateFerramenta(pdca);
+            // Carrega a lista de PDCA
+            List<PDCA> pdcas = ferramentaController.getPdcas();
+
+            // Encontra a ferramenta na lista e atualiza seus dados
+            for (int i = 0; i < pdcas.size(); i++) {
+                if (pdcas.get(i).getNome().equals(pdca.getNome())) {
+                    pdcas.set(i, pdca); // Atualiza a ferramenta na lista
+                    break;
+                }
+            }
+
+            // Salva a lista atualizada no arquivo JSON
+            ferramentaController.savePdcas(pdcas);
+
             JOptionPane.showMessageDialog(this, "PDCA atualizado com sucesso!");
             dispose(); // Fecha a tela após salvar
         });
